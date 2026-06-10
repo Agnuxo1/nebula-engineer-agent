@@ -8,6 +8,7 @@ import random
 import asyncio
 import logging
 import traceback
+import time
 from datetime import datetime, timezone
 from typing import Optional
 
@@ -118,8 +119,6 @@ async def main():
     # Run duration for GitHub Actions (default 5.5 hours)
     duration = int(os.getenv("RUN_DURATION", "19800")) 
     start_time = time.time()
-    
-    import time
     
     # Start the agent in the background
     agent_task = asyncio.create_task(agent.start())
